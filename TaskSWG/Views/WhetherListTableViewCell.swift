@@ -30,14 +30,14 @@ class WhetherListTableViewCell: UITableViewCell {
     }
     func frameForView(){
 
-        lblDay.frame = CGRect(x: self.contentView.frame.minX + 35, y: 7, width: 90, height: 21)
+        lblDay.frame = CGRect(x: self.contentView.frame.minX + 15, y: 7, width: 90, height: 21)
         lblDay.backgroundColor = UIColor.clear
         lblDay.textColor = UIColor.black
         lblDay.translatesAutoresizingMaskIntoConstraints = false
         
-        imgWhether.frame = CGRect(x: 145, y: 0, width: 40, height: 40)
+        imgWhether.frame = CGRect(x: 135, y: 0, width: 40, height: 40)
         
-        lblMinWhether.frame = CGRect(x:self.contentView.frame.width - 115, y: 7, width: 150, height: 21)
+        lblMinWhether.frame = CGRect(x:self.contentView.frame.width - 135, y: 7, width: 150, height: 21)
         lblMinWhether.backgroundColor = UIColor.clear
         lblMinWhether.textColor = UIColor.black
         lblMinWhether.translatesAutoresizingMaskIntoConstraints = false

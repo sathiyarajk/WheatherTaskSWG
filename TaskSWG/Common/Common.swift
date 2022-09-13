@@ -101,7 +101,7 @@ class common{
         let dateString = df.date(from: data)
         let df1 = DateFormatter()
         df1.dateFormat = "EEEE"
-        let val = df1.string(from: dateString!)
+        let val = df1.string(from: dateString ?? Date())
         return "\(String(describing: val))"
     }
     

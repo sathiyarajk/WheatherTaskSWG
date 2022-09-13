@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     private func setLayout(){
         let imageName = "756a72bd9b91af6ee5509021090fa474"
         let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image!)
+        let imageView = UIImageView(image: image ?? UIImage())
         view.addSubview(imageView)
         
         //enable auto layout

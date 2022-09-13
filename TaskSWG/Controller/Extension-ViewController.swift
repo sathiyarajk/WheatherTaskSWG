@@ -13,7 +13,7 @@ extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         
-        let location = locations.last! as CLLocation
+        guard let location = locations.last else { return }
         
         _ = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
@@ -25,18 +25,17 @@ extension ViewController: CLLocationManagerDelegate{
             if (error != nil){
                 print("error in reverseGeocode")
             }
-            let placemark = placemarks! as [CLPlacemark]
+            if let placemark = placemarks{
             if placemark.count>0{
-                let placemark = placemarks![0]
-                print(placemark.locality!)
-                print(placemark.administrativeArea!)
-                print(placemark.country!)
+                guard let placemark = placemarks?[0] else{ return }
+                
                 DispatchQueue.main.async {
-                    self.cityLbl.text = "\(placemark.locality!), \(placemark.country!)"
+                    self.cityLbl.text = "\(placemark.locality ?? ""), \(placemark.country ?? "")"
                 }
-                common.sharedInstance.sharedlocation = placemark.locality!
+                common.sharedInstance.sharedlocation = placemark.locality ?? ""
                 self.fetchResponse()
                 self.locationManager.stopUpdatingLocation()
+            }
             }
         }
     }
@@ -51,7 +50,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
                 
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? WhetherListTableViewCell
 
-        cell?.lblDay.text = common.sharedInstance.convertdateFormat(data: (self.wheather?.forecast?.forecastday?[indexPath.row].hour?[indexPath.row].time)!)
+        cell?.lblDay.text = common.sharedInstance.convertdateFormat(data: (self.wheather?.forecast?.forecastday?[indexPath.row].hour?[indexPath.row].time) ?? "")
         cell?.lblDay.textColor = .white
         cell?.lblDay.font = common.sharedInstance.font
         cell?.backgroundColor = UIColor.clear
@@ -62,7 +61,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell?.lblMinWhether.textColor = .white
         cell?.lblMinWhether.text =  minmaxValue
         
-        return cell!
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
