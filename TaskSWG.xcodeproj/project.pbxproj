@@ -81,6 +81,7 @@
 		18905E9928C9F090005A7C4B /* WebServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConstants.swift; sourceTree = "<group>"; };
 		18905E9A28C9F090005A7C4B /* ResponseFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseFetcher.swift; sourceTree = "<group>"; };
 		18905E9F28C9F1AC005A7C4B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		189A5F5628D44EDE00D30233 /* TaskSWG 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TaskSWG 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +708,7 @@
 		18905E5A28C9ED43005A7C4B /* TaskSWG.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				189A5F5628D44EDE00D30233 /* TaskSWG 2.xcdatamodel */,
 				18905E5B28C9ED43005A7C4B /* TaskSWG.xcdatamodel */,
 			);
 			currentVersion = 18905E5B28C9ED43005A7C4B /* TaskSWG.xcdatamodel */;

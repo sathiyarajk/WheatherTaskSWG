@@ -148,7 +148,7 @@ class ViewController: UIViewController {
     func setFonttextColor(){
         
         self.cityLbl.font = common.sharedInstance.fonttitle
-        self.currentWheatherstatus.font = common.sharedInstance.fonttitle
+        self.currentWheatherstatus.font = common.sharedInstance.font
         self.currentDateLbl.font = common.sharedInstance.fonttitle
         
         self.cityLbl.textColor = .white

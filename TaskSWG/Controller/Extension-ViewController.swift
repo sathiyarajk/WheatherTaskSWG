@@ -51,14 +51,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? WhetherListTableViewCell
 
         cell?.lblDay.text = common.sharedInstance.convertdateFormat(data: (self.wheather?.forecast?.forecastday?[indexPath.row].hour?[indexPath.row].time) ?? "")
-        cell?.lblDay.textColor = .white
-        cell?.lblDay.font = common.sharedInstance.font
+       
         cell?.backgroundColor = UIColor.clear
         let img: String = String(self.wheather?.forecast?.forecastday?[indexPath.row].day?.condition?.icon?.dropFirst(2) ?? "")
         cell?.imgWhether.image = common.sharedInstance.resizeImage(image: UIImage(url: URL(string: "https://\(img)")) ?? UIImage() , targetSize: CGSize(width: 40, height: 40.0))
         let minmaxValue = "\(String(describing: self.wheather?.forecast?.forecastday?[indexPath.row].day?.mintemp_c ?? 0.0))C - \(String(describing: self.wheather?.forecast?.forecastday?[indexPath.row].day?.maxtemp_c ?? 0.0))C"
-        cell?.lblMinWhether.font = common.sharedInstance.font
-        cell?.lblMinWhether.textColor = .white
+       
         cell?.lblMinWhether.text =  minmaxValue
         
         return cell ?? UITableViewCell()

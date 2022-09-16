@@ -41,7 +41,10 @@ class WhetherListTableViewCell: UITableViewCell {
         lblMinWhether.backgroundColor = UIColor.clear
         lblMinWhether.textColor = UIColor.black
         lblMinWhether.translatesAutoresizingMaskIntoConstraints = false
-        
+        lblDay.textColor = .white
+        lblDay.font = common.sharedInstance.font
+        lblMinWhether.font = common.sharedInstance.font
+        lblMinWhether.textColor = .white
         self.contentView.addSubview(bgview)
         self.contentView.addSubview(lblDay)
         self.contentView.addSubview(imgWhether)
